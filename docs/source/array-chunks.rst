@@ -31,7 +31,7 @@ form.  Note that ``chunks`` stands for "chunk shape" rather than "number of
 chunks", so specifying ``chunks=1`` means that you will have many chunks,
 each with exactly one element.
 
-For performance, a good choice of ``chunks`` follows the following rules:
+For performance, a good choice of ``chunks`` follows these rules:
 
 1.  A chunk should be small enough to fit comfortably in memory.  We'll
     have many chunks in memory at once
@@ -50,14 +50,14 @@ For performance, a good choice of ``chunks`` follows the following rules:
 5.  Chunks should align with your storage, if applicable.
 
     Array data formats are often chunked as well.  When loading or saving data,
-    if is useful to have Dask array chunks that are aligned with the chunking
+    it is useful to have Dask array chunks that are aligned with the chunking
     of your storage, often an even multiple times larger in each direction
 
 
 Unknown Chunks
 --------------
 
-Some arrays have unknown chunk sizes.  This arises whenever the size of an
+Some arrays have unknown chunk sizes. This arises whenever the size of an
 array depends on lazy computations that we haven't yet performed like the
 following:
 
